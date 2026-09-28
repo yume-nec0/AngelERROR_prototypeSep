@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>あなたが求めている救いは？</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<!-- 円グラフ -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- 3D -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://unpkg.com/three@0.128.0/examples/js/environments/RoomEnvironment.js"></script>
+</head>
+<body>
+
+  <!-- カード全体（3D表示エリア＋テキストが同居し、常に隠れずに見える） -->
+  <div class="app-card">
+
+    <!-- 3Dオブジェクト（+パーティクル）はこの専用エリアの中だけで描画される -->
+    <div id="model-viewport"></div>
+
+    <!-- スタート画面 -->
+    <div id="start" class="content-section">
+      <h1>天使診断</h1>
+      <p>ニックネームを入力してね</p>
+      <input type="text" id="username" name="username" placeholder="ゲストさん" autocomplete="nickname">
+      <button id="startBtn">診断スタート</button>
+    </div>
+
+    <!-- 診断画面 -->
+    <div id="quiz" class="content-section" style="display:none;">
+      <p id="progress"></p>
+      <h2 id="question"></h2>
+
+      <div class="button-area">
+        <button id="btnA" class="img-btn">YES</button>
+        <button id="btnB" class="img-btn">NO</button>
+      </div>
+      <div><button id="backBtn" class="text-btn">← 前の質問</button></div>
+    </div>
+
+    <!-- 結果画面 -->
+    <div id="result" class="content-section" style="display:none;"></div>
+
+  </div>
+
+  <script src="js/heart-model-data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
